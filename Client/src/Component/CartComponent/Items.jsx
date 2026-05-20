@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import axiosFetch from "../../Helper/Axios";
+import { getProductImage } from "../../Helper/ImageHelper";
 
 export const Items = ({ prop ,setLoading}) => {
   const [quantity, setQuantity] = useState(prop.quantity);
@@ -91,8 +92,8 @@ export const Items = ({ prop ,setLoading}) => {
         <th scope="row" className="border-0">
           <div className="p-2">
             <img
-              src={`data:image/png;base64,${item2.img}`}
-              alt=""
+              src={getProductImage(item2.img)}
+              alt={item2.productName}
               width={70}
               className="img-fluid rounded shadow-sm d-inline "
             />

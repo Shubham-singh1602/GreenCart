@@ -4,20 +4,24 @@ const axiosFetch = async ({ url, method, data = null }) => {
   try {
     // axios.get("dsa", {});
     console.log("error");
-    // const token = JSON.parse(sessionStorage.getItem("user") ?? "{}").token;
-    const token = sessionStorage.getItem("token") ?? "{}";
-    console.log(token);
+    const token = sessionStorage.getItem("token");
+    
+    // Build headers dynamically
+    const headers = {};
+    if (token && token !== "null" && token !== "undefined" && token !== "{}") {
+      headers["Authorization"] = `Bearer ${token}`;
+    }
+
     const response = await axios.request({
       url: "http://localhost:9090/" + url,
       method,
       data: data,
-      headers: {
-        Authorization: token ? `Bearer ${token}` : "",
-      },
+      headers: headers,
     });
     return response;
   } catch (err) {
-    return err;
+    console.error("API error in Axios Fetch: ", err);
+    return { data: [] }; // Fallback to an empty list so map() doesn't crash
   }
 };
 

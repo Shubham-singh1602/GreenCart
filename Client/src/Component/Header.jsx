@@ -1,39 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import * as Scroll from 'react-scroll';
-
-// Or Access Link,Element,etc as follows
-let Link = Scroll.Link;
-
-
-
 export const Header = () => {
-  
-
   const [islogin, setislogin] = useState(sessionStorage.getItem("token"));
-  
+  const [isDark, setIsDark] = useState(() => {
+    return localStorage.getItem("theme") !== "light";
+  });
+
   const navigate = useNavigate();
+
+  // Apply theme to <html> element
+  useEffect(() => {
+    const root = document.documentElement;
+    if (isDark) {
+      root.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDark]);
+
+  const toggleTheme = () => setIsDark((prev) => !prev);
+
   const handalRedirect = () => {
     if (islogin) {
       navigate(`/cart`);
-   
     } else {
       navigate(`/login`);
-
     }
   };
 
   const handalLogout = () => {
     sessionStorage.removeItem("token");
-    setislogin(false)
+    setislogin(false);
     navigate(`/`);
   };
-
-  
-
-    
-
 
   return (
     <header className="header" data-header="">
@@ -66,60 +68,29 @@ export const Header = () => {
                 </a>
               </li>
               <li>
-                <Link
-                  activeClass="active"
-                  className="navbar-link"
-                  smooth="linear"
-                  spy
-                  to="contact"
-                  offset={-30}
-                >
+                <a href="/#contact" className="navbar-link">
                   About
-                </Link>
+                </a>
               </li>
               <li>
-                {/* <Link to="/shop" activeClass="active" className="navbar-link"  >
-            Shop
-              </Link> */}
                 <a href="/shop" className="navbar-link">
                   Shop
                 </a>
               </li>
               <li>
-                <Link
-                  activeClass="active"
-                  className="navbar-link"
-                  smooth="linear"
-                  spy
-                  to="blog"
-                  offset={-30}
-                >
+                <a href="/#contact" className="navbar-link">
                   Blog
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  activeClass="active"
-                  className="navbar-link"
-                  smooth="linear"
-                  spy
-                  to="products"
-                  offset={-30}
-                >
+                <a href="/#products" className="navbar-link">
                   Products
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  activeClass="active"
-                  className="navbar-link"
-                  smooth="linear"
-                  spy
-                  to="contact"
-                  offset={-30}
-                >
+                <a href="/#contact" className="navbar-link">
                   Contact
-                </Link>
+                </a>
               </li>
             </ul>
           </nav>
@@ -131,7 +102,6 @@ export const Header = () => {
                 data-search-btn=""
               >
                 <ion-icon name="search-outline" className="search-icon" />
-                {/* <ion-icon name="close-outline" className="close-icon" /> */}
               </button>
               <div className="input-wrapper">
                 <input
@@ -145,21 +115,17 @@ export const Header = () => {
                 </button>
               </div>
             </div>
-            {/* //whishlist */}
-            {/* {islogin ? (
-              <button
-                className="header-action-btn"
-                aria-label="Open whishlist"
-                data-panel-btn="whishlist"
-              >
-                <ion-icon name="heart-outline" />
-                <data className="btn-badge" value={3}>
-                  03
-                </data>
-              </button>
-            ) : (
-              <></>
-            )} */}
+
+            {/* Dark / Light mode toggle */}
+            <button
+              className="header-action-btn theme-toggle-btn"
+              aria-label="Toggle theme"
+              onClick={toggleTheme}
+              title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            >
+              <ion-icon name={isDark ? "sunny-outline" : "moon-outline"} />
+            </button>
+
             {!islogin ? (
               <button
                 className="header-action-btn"
@@ -183,16 +149,19 @@ export const Header = () => {
                   </data>
                 </button>
               </>
-              
             )}
-           {islogin ? <button
-                  className="header-action-btn"
-                  aria-label="Open shopping cart"
-                  data-panel-btn="cart"
-                  onClick={() => handalLogout()}
-                >
-                 <ion-icon name="log-out-outline"></ion-icon>
-                </button>:<></>}
+            {islogin ? (
+              <button
+                className="header-action-btn"
+                aria-label="Logout"
+                data-panel-btn="cart"
+                onClick={() => handalLogout()}
+              >
+                <ion-icon name="log-out-outline"></ion-icon>
+              </button>
+            ) : (
+              <></>
+            )}
           </div>
         </div>
       </div>

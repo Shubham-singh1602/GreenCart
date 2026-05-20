@@ -3,6 +3,7 @@ import { Header } from '../Component/Header'
 import { Footer } from '../Component/Footer'
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { getProductImage } from '../Helper/ImageHelper';
 
 export const ProductDetails = () => {
   
@@ -91,7 +92,7 @@ console.log(quantity);
       <div className="row">
         <div className="col-md-6 d-flex justify-content-center">
               {!data.img?<></>:<img className='productimg'  width="167" 
-     height="250" src={`data:image/png;base64,${data.img}`} alt="Product Image"/>}
+     height="250" src={getProductImage(data.img)} alt={data.productName || "Product Image"}/>}
                  </div>
         <div className="col-md-6">
           <div className="product-dtl">

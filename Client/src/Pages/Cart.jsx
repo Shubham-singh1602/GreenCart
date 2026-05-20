@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Footer } from "../Component/Footer";
 import { Header } from "../Component/Header";
 import { Items } from "../Component/CartComponent/Items";
+import { ToastContainer, toast } from 'react-toastify';
 
 export const Cart = () => {
   useEffect(() => { window.scrollTo(0, 0) }, []);
@@ -35,21 +36,41 @@ export const Cart = () => {
       
 
       const createOrder = async (e) => {
-        const res = await fetch(`http://localhost:9090/payment/${totalAmount}`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-        "Authorization": "Bearer " + token
-          },
-        });
-        const da = await res.json();
-        setdata(da);
-        return da;
+        try {
+          const res = await fetch(`http://localhost:9090/payment/${totalAmount}`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": "Bearer " + token
+            },
+          });
+          if (!res.ok) {
+            throw new Error("Server returned an error when initializing payment.");
+          }
+          const text = await res.text();
+          if (!text || text.trim() === "null" || text.trim() === "") {
+            throw new Error("Razorpay integration is in sandbox/mock mode. Real API keys are required for transaction processing.");
+          }
+          const da = JSON.parse(text);
+          setdata(da);
+          return da;
+        } catch (err) {
+          console.error("Payment Order Creation Failed: ", err);
+          toast.info("Payment Integration Info: " + err.message, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+          });
+          return null;
+        }
       }
 
 
       const handlePayment = async () => {
         const order = await createOrder();
+        if (!order) {
+          return;
+        }
         const options = {
           key: order.key,
           amount: order.amount, 
@@ -65,8 +86,8 @@ export const Cart = () => {
             alert(response.razorpay_signature);
           },
           prefill: {
-            name: "vivek",
-            email: "vivek@gmail.com",
+            name: "shubham",
+            email: "shubham@gmail.com",
             contact: 7405999619,
           },
           notes: {
@@ -99,6 +120,7 @@ export const Cart = () => {
   return (
     <>
       <Header />
+      <ToastContainer />
       <div className="shopping-cart">
         <div className="px-4 px-lg-0">
           <div className="pb-5">

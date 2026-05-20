@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Entity
+@Table(name = "users")
 @NoArgsConstructor
 @Data
 @ToString

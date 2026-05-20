@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
+import { getProductImage } from "../../Helper/ImageHelper";
 
 export const ProductCard = (props) => {
   const navigate = useNavigate();
@@ -53,14 +54,11 @@ export const ProductCard = (props) => {
         <div className="product-card">
           <figure className="card-banner">
             <img
-              // src="./images/product-1.png"
-              src={`data:image/png;base64,${props.img}`}
-              // src={base64Image}
-
+              src={getProductImage(props.img)}
               width={189}
               height={189}
               loading="lazy"
-              alt="Fresh Orangey"
+              alt={props.name}
             />
             <div className="btn-wrapper">
               <button className="product-btn" aria-label="Add to Whishlist">

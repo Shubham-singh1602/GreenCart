@@ -2,13 +2,11 @@
   #main.css
 \*-----------------------------------*/
 
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap');
+
 /**
  * copyright 2022 codewithsadee
  */
-
-
-
-
 
 /*-----------------------------------*\
   #CUSTOM PROPERTY
@@ -20,44 +18,44 @@
    * colors
    */
 
-  --charleston-green: hsl(206, 20%, 14%);
-  --battleship-gray: hsl(0, 0%, 53%);
-  --shamrock-green: hsl(152, 95%, 31%);
-  --russian-violet: hsl(245, 97%, 13%);
-  --yellow-orange: hsl(36, 100%, 50%);
-  --green-pigment: hsl(152, 95%, 33%);
-  --roman-silver: hsl(223, 6%, 55%);
-  --sonic-silver: hsl(0, 0%, 45%);
-  --eerie-black: hsl(210, 11%, 15%);
-  --space-cadet: hsl(222, 36%, 22%);
-  --light-gray: hsl(0, 0%, 82%);
-  --mint-cream: hsl(96, 36%, 95%);
-  --gunmetal-1: hsl(207, 21%, 17%);
-  --gunmetal-2: hsl(206, 21%, 15%);
-  --black_90: hsla(0, 0%, 0%, 0.9);
-  --black_50: hsla(0, 0%, 0%, 0.5);
-  --black_25: hsla(0, 0%, 0%, 0.25);
-  --white_50: hsla(0, 0%, 100%, 0.50);
-  --white_25: hsla(0, 0%, 100%, 0.25);
-  --white_10: hsla(0, 0%, 100%, 0.1);
-  --platinum: hsl(0, 0%, 92%);
-  --cultured: hsl(0, 0%, 94%);
-  --emerald: hsl(152, 95%, 39%);
-  --emerald_70: hsla(152, 95%, 39%, 0.7);
-  --white: hsl(0, 0%, 100%);
-  --black: hsl(0, 0%, 0%);
-  --onyx: hsl(0, 0%, 27%);
-  --jet: hsl(0, 0%, 20%);
-  --russian-violet_65: hsla(245, 97%, 13%, 0.65);
-  --rhythm: hsl(220, 17%, 49%);
-  --spanish-gray: hsl(156, 3%, 61%);
+  --charleston-green: #07090e;
+  --battleship-gray: #94a3b8;
+  --shamrock-green: #10b981;
+  --russian-violet: #ffffff;
+  --yellow-orange: #f59e0b;
+  --green-pigment: #059669;
+  --roman-silver: #cbd5e1;
+  --sonic-silver: #64748b;
+  --eerie-black: #0f172a;
+  --space-cadet: #f8fafc;
+  --light-gray: #cbd5e1;
+  --mint-cream: rgba(255, 255, 255, 0.02);
+  --gunmetal-1: #07090e;
+  --gunmetal-2: #0f121a;
+  --black_90: rgba(0, 0, 0, 0.9);
+  --black_50: rgba(0, 0, 0, 0.5);
+  --black_25: rgba(0, 0, 0, 0.25);
+  --white_50: rgba(255, 255, 255, 0.5);
+  --white_25: rgba(255, 255, 255, 0.25);
+  --white_10: rgba(255, 255, 255, 0.08);
+  --platinum: rgba(255, 255, 255, 0.08);
+  --cultured: rgba(255, 255, 255, 0.05);
+  --emerald: #00f59b;
+  --emerald_70: rgba(0, 245, 155, 0.7);
+  --white: #07090e;
+  --black: #ffffff;
+  --onyx: #1e293b;
+  --jet: #0f172a;
+  --russian-violet_65: rgba(255, 255, 255, 0.65);
+  --rhythm: #475569;
+  --spanish-gray: #cbd5e1;
 
   /**
    * typography
    */
 
-  --ff-playfair-display: 'Playfair Display', serif;
-  --ff-roboto: 'Roboto', sans-serif;
+  --ff-playfair-display: 'Syne', sans-serif;
+  --ff-roboto: 'Plus Jakarta Sans', sans-serif;
 
   --fs-1: 3rem;
   --fs-2: 2.4rem;
@@ -173,8 +171,8 @@ address {
 }
 
 ::selection {
-  background-color: var(--black_50);
-  color: var(--white);
+  background-color: #00f59b;
+  color: #07090e;
 }
 
 html {
@@ -2755,15 +2753,570 @@ input[type=number] {
 
 #login-box-footer {
   text-align: center;
-  border-top: 1px solid #dedfe0
+  border-top: 1px solid rgba(255, 255, 255, 0.08)
 }
 
 #register-link {
-  color: #2474c1;
+  color: #00f59b;
   padding: 0 10px;
   text-decoration: none
 }
 
 #submit-id-submit:hover {
   background-color: #198269
+}
+
+
+/* ==========================================================================
+   ✨ PREMIUM UNIQUE DARK GLASSMORPHIC & NEON GLOW THEME OVERRIDES (ZOOOM-INSPIRED)
+   ========================================================================== */
+
+/* Modern scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #07090e;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 245, 155, 0.2);
+  border-radius: 10px;
+  border: 2px solid #07090e;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 245, 155, 0.5);
+}
+
+/* Base Body Ambient Glows */
+body {
+  background: radial-gradient(circle at 0% 0%, #112c23 0%, #07090e 55%),
+              radial-gradient(circle at 100% 100%, #092036 0%, #07090e 55%);
+  background-color: #07090e !important;
+  color: #f8fafc !important;
+  overflow-x: hidden;
+}
+
+/* Sticky Header with Backdrop Blur */
+.header {
+  background: rgba(7, 9, 14, 0.75) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  transition: all 0.3s ease;
+}
+
+/* Logo Styling */
+.logo {
+  font-weight: 800 !important;
+  letter-spacing: -0.5px !important;
+  color: #ffffff !important;
+  text-transform: capitalize;
+}
+
+/* Navigation Links with Micro-animations */
+.navbar-link {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-weight: 600 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  cursor: pointer !important;
+}
+
+.navbar-link:hover {
+  color: #00f59b !important;
+  transform: translateY(-1px);
+}
+
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #00f59b;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-link:hover::after {
+  width: 15px;
+}
+
+/* Premium Glass Cards (Products) */
+.product-card {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-radius: 20px !important;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  border-color: rgba(0, 245, 155, 0.4) !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 245, 155, 0.15), 0 0 20px -2px rgba(0, 245, 155, 0.08) !important;
+}
+
+/* Glass Details Inside Product Cards */
+.product-card .card-title, 
+.product-card .card-title a {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* High-Contrast Gradients for Buttons */
+.btn {
+  background: linear-gradient(135deg, #00f59b 0%, #06b6d4 100%) !important;
+  color: #07090e !important;
+  font-weight: 700 !important;
+  border: none !important;
+  border-radius: 50px !important;
+  box-shadow: 0 8px 20px -6px rgba(0, 245, 155, 0.4) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(0, 245, 155, 0.5), 0 0 10px rgba(0, 245, 155, 0.2) !important;
+}
+
+/* Reused Pill Filter Buttons */
+.filter-btn {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 50px !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  padding: 12px 24px !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  backdrop-filter: blur(8px);
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+  border-color: rgba(0, 245, 155, 0.3) !important;
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #00f59b 0%, #06b6d4 100%) !important;
+  color: #07090e !important;
+  border-color: transparent !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 245, 155, 0.3) !important;
+}
+
+.filter-btn.active .filter-text {
+  color: #07090e !important;
+}
+
+/* Glass Aside Cart / Panels */
+.side-panel {
+  background: rgba(15, 18, 26, 0.9) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+.panel-close-btn {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: #ffffff !important;
+}
+
+.panel-item .item-title {
+  color: #ffffff !important;
+}
+
+.panel-item {
+  border-block-end: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Shopping Cart Glass Layout */
+.shopping-cart {
+  background: transparent !important;
+}
+
+.shopping-cart .card {
+  background: rgba(255, 255, 255, 0.01) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(20px);
+  border-radius: 20px !important;
+  color: #ffffff !important;
+}
+
+/* Headings in Syne font */
+h1, h2, h3, .h1, .h2, .h3, .section-title {
+  font-family: var(--ff-playfair-display) !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  color: #00f59b !important;
+  font-family: var(--ff-roboto) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  font-size: 1.4rem !important;
+  letter-spacing: 2px;
+  font-style: normal !important;
+}
+
+/* Footer Accent Glow */
+.footer {
+  background-color: #030406 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: #94a3b8 !important;
+}
+
+.footer-list-title {
+  color: #ffffff !important;
+}
+
+.social-link {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+.social-link:hover {
+  background-color: #00f59b !important;
+  color: #07090e !important;
+  border-color: transparent !important;
+  box-shadow: 0 0 15px rgba(0, 245, 155, 0.4) !important;
+}
+
+/* Action Badges circular design */
+.header-action-btn {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  transition: all 0.3s ease;
+}
+
+.header-action-btn:hover {
+  border-color: #00f59b !important;
+  box-shadow: 0 0 15px rgba(0, 245, 155, 0.15) !important;
+}
+
+.btn-badge {
+  background-color: #00f59b !important;
+  color: #07090e !important;
+}
+
+/* ==========================================================================
+   LIGHT MODE THEME — activated by data-theme="light" on <html>
+   ========================================================================== */
+
+[data-theme="light"] {
+  --charleston-green: #f8faf5;
+  --battleship-gray: #555;
+  --shamrock-green: #1a8a6f;
+  --russian-violet: #1a1a2e;
+  --yellow-orange: #e08c00;
+  --green-pigment: #1a8a6f;
+  --roman-silver: #444;
+  --sonic-silver: #555;
+  --eerie-black: #111;
+  --space-cadet: #1a1a2e;
+  --light-gray: #bbb;
+  --mint-cream: #f0f7f0;
+  --gunmetal-1: #f8faf5;
+  --gunmetal-2: #f0f7f0;
+  --black_90: rgba(0,0,0,0.85);
+  --black_50: rgba(0,0,0,0.45);
+  --black_25: rgba(0,0,0,0.2);
+  --white_50: rgba(255,255,255,0.6);
+  --white_25: rgba(255,255,255,0.3);
+  --white_10: rgba(0,0,0,0.05);
+  --platinum: rgba(0,0,0,0.08);
+  --cultured: rgba(0,0,0,0.04);
+  --emerald: #0a9e6b;
+  --emerald_70: rgba(10,158,107,0.7);
+  --white: #f8faf5;
+  --black: #1a1a2e;
+  --onyx: #dde8dd;
+  --jet: #e0ece0;
+  --russian-violet_65: rgba(26,26,46,0.65);
+  --rhythm: #666;
+  --spanish-gray: #777;
+}
+
+[data-theme="light"] body {
+  background: #f0f7f0 !important;
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .header {
+  background: rgba(240, 247, 240, 0.92) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+[data-theme="light"] .logo {
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .logo .span {
+  color: #0a9e6b !important;
+}
+
+[data-theme="light"] .navbar-link {
+  color: rgba(26,26,46, 0.75) !important;
+}
+
+[data-theme="light"] .navbar-link:hover {
+  color: #0a9e6b !important;
+}
+
+[data-theme="light"] .navbar-link::after {
+  background: #0a9e6b;
+}
+
+[data-theme="light"] .header-action-btn {
+  background-color: rgba(0,0,0,0.04) !important;
+  color: #1a1a2e !important;
+  border: 1px solid rgba(0,0,0,0.1) !important;
+}
+
+[data-theme="light"] .header-action-btn:hover {
+  border-color: #0a9e6b !important;
+}
+
+[data-theme="light"] .btn-badge {
+  background-color: #0a9e6b !important;
+  color: #fff !important;
+}
+
+[data-theme="light"] .product-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(0,0,0,0.07) !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06) !important;
+}
+
+[data-theme="light"] .product-card:hover {
+  border-color: rgba(10,158,107,0.4) !important;
+  box-shadow: 0 12px 30px rgba(10,158,107,0.12) !important;
+}
+
+[data-theme="light"] .product-card .card-title,
+[data-theme="light"] .product-card .card-title a {
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .btn {
+  background: linear-gradient(135deg, #0a9e6b 0%, #0891b2 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 18px -4px rgba(10,158,107,0.35) !important;
+}
+
+[data-theme="light"] .filter-btn {
+  background: #fff !important;
+  border: 1px solid rgba(0,0,0,0.1) !important;
+  color: #444 !important;
+}
+
+[data-theme="light"] .filter-btn:hover {
+  border-color: rgba(10,158,107,0.4) !important;
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .filter-btn.active {
+  background: linear-gradient(135deg, #0a9e6b 0%, #0891b2 100%) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+[data-theme="light"] .filter-btn.active .filter-text {
+  color: #fff !important;
+}
+
+[data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3,
+[data-theme="light"] .h1, [data-theme="light"] .h2, [data-theme="light"] .h3,
+[data-theme="light"] .section-title {
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .section-subtitle {
+  color: #0a9e6b !important;
+}
+
+[data-theme="light"] .footer {
+  background-color: #1a2e1a !important;
+  color: #ccc !important;
+}
+
+[data-theme="light"] ::selection {
+  background-color: #0a9e6b;
+  color: #fff;
+}
+
+/* ==========================================================================
+   CART PAGE — Dark Mode Fixes
+   ========================================================================== */
+
+/* Cart wrapper — remove white Bootstrap backgrounds */
+.shopping-cart .bg-white,
+.shopping-cart [class*="bg-white"] {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  color: #f1f5f9 !important;
+}
+
+.shopping-cart .bg-light {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: #f1f5f9 !important;
+}
+
+.shopping-cart table {
+  color: #f1f5f9 !important;
+}
+
+.shopping-cart table th,
+.shopping-cart table td {
+  color: #f1f5f9 !important;
+  border-color: rgba(255,255,255,0.07) !important;
+}
+
+.shopping-cart .border-bottom {
+  border-color: rgba(255,255,255,0.08) !important;
+}
+
+/* Qty counter — make visible in dark mode */
+.qty1 {
+  color: #f1f5f9 !important;
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.qtyminus1, .qtyplus1 {
+  color: #f1f5f9 !important;
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 2px 8px;
+  transition: all 0.2s ease;
+}
+
+.qtyminus1:hover, .qtyplus1:hover {
+  background: rgba(0,245,155,0.15) !important;
+  border-color: #00f59b !important;
+  color: #00f59b !important;
+}
+
+/* Product name link in cart */
+.shopping-cart .text-dark {
+  color: #f1f5f9 !important;
+}
+
+/* Trash icon */
+.shopping-cart .fa-trash {
+  color: #f87171 !important;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.shopping-cart .fa-trash:hover {
+  color: #ef4444 !important;
+}
+
+/* Order summary background */
+.shopping-cart .rounded.shadow-sm,
+.shopping-cart .p-5.bg-white {
+  background: rgba(255,255,255,0.02) !important;
+  border: 1px solid rgba(255,255,255,0.07) !important;
+  border-radius: 16px !important;
+}
+
+.shopping-cart .rounded-pill.bg-light {
+  background: rgba(0,245,155,0.1) !important;
+  color: #00f59b !important;
+  border: 1px solid rgba(0,245,155,0.2) !important;
+}
+
+.shopping-cart .text-muted {
+  color: #94a3b8 !important;
+}
+
+.shopping-cart strong {
+  color: #f1f5f9 !important;
+}
+
+/* Checkout button */
+.shopping-cart .btn-dark {
+  background: linear-gradient(135deg, #00f59b 0%, #06b6d4 100%) !important;
+  color: #07090e !important;
+  border: none !important;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 20px -6px rgba(0,245,155,0.4) !important;
+}
+
+/* Light mode cart overrides */
+[data-theme="light"] .shopping-cart .bg-white,
+[data-theme="light"] .shopping-cart [class*="bg-white"] {
+  background-color: #ffffff !important;
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .shopping-cart table,
+[data-theme="light"] .shopping-cart table th,
+[data-theme="light"] .shopping-cart table td {
+  color: #1a1a2e !important;
+  border-color: rgba(0,0,0,0.08) !important;
+}
+
+[data-theme="light"] .qty1 {
+  color: #1a1a2e !important;
+  background: #fff !important;
+  border: 1px solid rgba(0,0,0,0.15) !important;
+}
+
+[data-theme="light"] .qtyminus1,
+[data-theme="light"] .qtyplus1 {
+  color: #1a1a2e !important;
+  background: #f0f0f0 !important;
+  border: 1px solid rgba(0,0,0,0.12) !important;
+}
+
+[data-theme="light"] .shopping-cart .text-dark {
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .shopping-cart .text-muted {
+  color: #555 !important;
+}
+
+[data-theme="light"] .shopping-cart strong {
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .shopping-cart .btn-dark {
+  background: linear-gradient(135deg, #0a9e6b 0%, #0891b2 100%) !important;
+  color: #fff !important;
+}
+
+/* ==========================================================================
+   THEME TOGGLE BUTTON
+   ========================================================================== */
+.theme-toggle-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.theme-toggle-btn:hover {
+  color: #00f59b !important;
+  transform: rotate(20deg);
+}
+
+[data-theme="light"] .theme-toggle-btn:hover {
+  color: #0a9e6b !important;
 }

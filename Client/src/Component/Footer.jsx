@@ -126,7 +126,7 @@ export const Footer = () => {
         <p className="copyright">
           © 2022{" "}
           <a href="#" className="copyright-link">
-            vivekkakadiya
+            shubham
           </a>
           . All Rights Reserved.
         </p>
