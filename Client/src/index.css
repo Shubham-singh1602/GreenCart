@@ -3320,3 +3320,243 @@ h1, h2, h3, .h1, .h2, .h3, .section-title {
 [data-theme="light"] .theme-toggle-btn:hover {
   color: #0a9e6b !important;
 }
+
+/* ==========================================================================
+   ✨ PREMIUM TACTILE FEEDBACK & MICRO-ANIMATIONS (ZOOOM-INSPIRED)
+   ========================================================================== */
+
+/* 1. Universal Tactile Click/Press Feedback */
+.btn:active,
+.filter-btn:active,
+.header-action-btn:active,
+.product-btn:active,
+.qtyminus1:active,
+.qtyplus1:active,
+.theme-toggle-btn:active,
+#submit-id-submit:active {
+  transform: scale(0.95) !important;
+  transition: transform 0.08s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+/* Specific active override for primary buttons to flat and squish */
+.btn:active {
+  transform: translateY(0) scale(0.95) !important;
+}
+
+/* 2. Refined, Minimalist Product Card & Hover Effects */
+.product-card {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.product-card:hover {
+  transform: translateY(-4px) !important; /* Elegant subtle lift, no scale */
+  border-color: rgba(0, 245, 155, 0.25) !important; /* Softened green border */
+  box-shadow: 0 12px 24px -8px rgba(0, 245, 155, 0.08), 
+              0 0 16px -4px rgba(0, 245, 155, 0.04) !important; /* Clean soft diffuse glow */
+}
+
+[data-theme="light"] .product-card:hover {
+  border-color: rgba(10, 158, 107, 0.25) !important;
+  box-shadow: 0 12px 24px -8px rgba(10, 158, 107, 0.06) !important;
+}
+
+/* Elegant Image Overflow Zoom on Card Hover */
+.product-card .card-banner {
+  overflow: hidden !important;
+  border-radius: 16px !important;
+}
+
+.product-card .card-banner img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.product-card:hover .card-banner img {
+  transform: scale(1.05) !important;
+  opacity: 0.95 !important; /* Much higher quality presentation than washed-out 0.6 */
+}
+
+/* 3. Sleek Navigation Underline Sweep Animation */
+.navbar-link {
+  transition: color 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.navbar-link::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -6px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 2px !important;
+  background-color: #00f59b !important;
+  transform: scaleX(0) !important;
+  transform-origin: right !important;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.navbar-link:hover::after {
+  transform: scaleX(1) !important;
+  transform-origin: left !important;
+  width: 100% !important;
+}
+
+[data-theme="light"] .navbar-link::after {
+  background-color: #0a9e6b !important;
+}
+
+/* 4. Glassmorphic Login & Signup Box Overhaul */
+#login-box {
+  background: rgba(15, 18, 26, 0.65) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 24px !important;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.login-box-header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 24px 30px 20px !important;
+}
+
+.login-box-header h4 {
+  color: #ffffff !important;
+  font-family: var(--ff-playfair-display) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px !important;
+}
+
+.login-box-content {
+  background: transparent !important;
+  padding: 30px 30px 15px !important;
+}
+
+.email-login {
+  background: transparent !important;
+  padding: 10px 30px !important;
+}
+
+.form-control, .email-imput, .password-input {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+  height: 48px !important;
+  padding: 12px 16px !important;
+  font-size: 1.5rem !important;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  outline: none !important;
+}
+
+.form-control:focus, .email-imput:focus, .password-input:focus {
+  border-color: #00f59b !important;
+  box-shadow: 0 0 0 3px rgba(0, 245, 155, 0.15) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.social-login-link {
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 600 !important;
+  font-size: 1.4rem !important;
+  border-radius: 12px !important;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.fb-login, .gp-login {
+  border-radius: 12px !important;
+}
+
+.fb-login:hover, .gp-login:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.login-box-seperator-container {
+  padding: 10px 30px !important;
+}
+
+.login-box-seperator {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+#login-box-footer {
+  background: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 20px 30px 24px !important;
+}
+
+#login-box-footer p {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Light mode overrides for Login & Signup Box */
+[data-theme="light"] #login-box {
+  background: #ffffff !important;
+  border: 1px solid rgba(10, 158, 107, 0.08) !important;
+  box-shadow: 0 20px 40px rgba(10, 158, 107, 0.05) !important;
+}
+
+[data-theme="light"] .login-box-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] .login-box-header h4 {
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .form-control, 
+[data-theme="light"] .email-imput, 
+[data-theme="light"] .password-input {
+  background: #f8fafc !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #1a1a2e !important;
+}
+
+[data-theme="light"] .form-control:focus, 
+[data-theme="light"] .email-imput:focus, 
+[data-theme="light"] .password-input:focus {
+  border-color: #0a9e6b !important;
+  box-shadow: 0 0 0 3px rgba(10, 158, 107, 0.1) !important;
+  background: #ffffff !important;
+}
+
+[data-theme="light"] #login-box-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] #login-box-footer p {
+  color: #555555 !important;
+}
+
+/* 5. Pure CSS Staggered Fade-in fadeInUp Transition for Products Grid */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-grid li {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Stagger delay for cards */
+.animate-grid li:nth-child(1) { animation-delay: 0.04s; }
+.animate-grid li:nth-child(2) { animation-delay: 0.08s; }
+.animate-grid li:nth-child(3) { animation-delay: 0.12s; }
+.animate-grid li:nth-child(4) { animation-delay: 0.16s; }
+.animate-grid li:nth-child(5) { animation-delay: 0.20s; }
+.animate-grid li:nth-child(6) { animation-delay: 0.24s; }
+.animate-grid li:nth-child(7) { animation-delay: 0.28s; }
+.animate-grid li:nth-child(8) { animation-delay: 0.32s; }
+.animate-grid li:nth-child(n+9) { animation-delay: 0.36s; }

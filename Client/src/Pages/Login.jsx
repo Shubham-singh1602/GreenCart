@@ -129,7 +129,7 @@ export const Login = () => {
     </div>
     <div className="login-box-seperator" />
   </div>
-  <div className="email-login" style={{ backgroundColor: "#ffffff" }}>
+  <div className="email-login">
     <input
       type="email"
       className="email-imput form-control"

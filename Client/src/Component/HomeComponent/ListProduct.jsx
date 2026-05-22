@@ -134,7 +134,7 @@ export const ListProduct = () => {
             </li>
           </ul>
           
-          <ul className="grid-list">
+          <ul className="grid-list animate-grid" key={activeCategory}>
             {filteredData.map((item) => 
                <ProductCard 
                  key={item.productid} 
